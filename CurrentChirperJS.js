@@ -26,27 +26,12 @@ MasterObject.MasterAjaxCall = function (checkFriends, getProfiles, getTweets, ed
     //DO SOMETHING AT THE SAME TIME (just make some statements true at the same time)
 
     //GET
-    //myurl/tweet    campuurl/tweets    campurl/profiles    myurl/profile     campurl/profile    
-    //mytweets, friendstweets, friendsprofiles, myprofiles, get everusers, 
-
-
-    //  myfriends     ////fireBaseFriends[i].url + "/profile/"      //fireBaseFriends[i].url + "/tweets/"
-    //   myfriends           ---> friends profiles --->                       friends tweets (poll) ---> 
-
-
-    //nourl addition         //myURLSeg + profile         //myUrlSeg + /tweets/
-    // geteveryuser --->    my profile ----->       mytweets ----> 
-
-
 
     //POST
-    //   myurl/friend     myurl/tweets    
-    //editFriends, postnewTweet,
 
     //EDIT
 
     //DELETE
-
 
     //////////////////////////////GET//////////////////////////////////
 
@@ -248,65 +233,6 @@ MasterObject.MasterAjaxCall = function (checkFriends, getProfiles, getTweets, ed
                         var allMyTweets = JSON.parse(this.response);   //when you post something, you get a json response with a firebase name/'id' //{"name":"JXDeVGdh062x6TdcWOX"} / -jxDfkvRR  
                         console.log("THere's a response:" + allMyTweets);
                         tweetHolder(allMyTweets);
-                        //getFriendsTweets(function (callback) {
-                        //    for (var message in callback) {
-                        //        friendTweets.push(callback[message]);
-                        //    };
-                        //});
-                        //var holdOn = function () {
-                        //    console.log("called HOLDON FUNCTION");
-
-                        //    for (var prop in friendTweets) {
-                        //        console.log(friendTweets[prop].username + " " + friendTweets[prop].message + " " + friendTweets[prop].timestamp);
-                        //        allTweets.push(friendTweets[prop]);
-                        //    };
-
-                        //    var anotherCounter = 0;
-                        //    for (var category in allTweets) {
-                        //        console.log("Inside allTweets" + anotherCounter);
-                        //        anotherCounter++;
-                        //        var date = new Date(allTweets[category].timestamp);
-                        //        if (date.toDateString().charAt(0) === "I") {
-                        //            allTweets.splice(category, 1);
-                        //            console.log("This is not a number" + date);
-                        //        } else {
-                        //            console.log("This is a number" + date);
-                        //            var newTime = date.getTime();
-                        //            //console.log(typeof newTime);
-                        //            allTweets[category].timestamp = newTime;
-                        //        }
-                        //    }; console.log("Out of the for loop");
-
-                        //    var nearCounter = 0;
-                        //    function dates_time(a, b) {
-                        //        console.log(nearCounter);
-                        //        nearCounter++;
-                        //        console.log("This is inside organizer" + a.timestamp + " " + b.timestamp);
-                        //        return a.timestamp - b.timestamp;
-                        //    };
-                        //    console.log("About to organize");
-                        //    allTweets.sort(dates_time);
-
-                        //    //allTweets[category].timestamp = formattedTime;
-                        //    var everyTweet = "<div style='height:300px; width:500px; border:1px solid #808080; overflow:auto;'>"
-                        //    for (var prop in allTweets) {
-                        //        var displayDate = new Date(allTweets[prop].timestamp);
-                        //        var month = displayDate.getMonth();
-                        //        var day = displayDate.getDate();
-                        //        var year = displayDate.getFullYear();
-                        //        //// hours part from the timestamp
-                        //        var hours = displayDate.getHours();
-                        //        // minutes part from the timestamp
-                        //        var minutes = "0" + displayDate.getMinutes();
-                        //        // seconds part from the timestamp
-                        //        var seconds = "0" + displayDate.getSeconds();
-                        //        var formattedTime = hours + ':' + minutes.substr(minutes.length - 2) + ':' + seconds.substr(seconds.length - 2);
-                        //        var dateView = month + "/" + day + "/" + year + " @ " + formattedTime;
-                        //        everyTweet += "<p style='display: block;'>" + " <b>" + allTweets[prop].username + "</b>: " + allTweets[prop].message + " " + dateView + "</p>" + "<br>";
-                        //    }; everyTweet += "</div>";
-                        //    document.getElementById("allTweets").innerHTML = everyTweet;
-                        //    document.getElementById("allTweets").innerHTML += "<input type='text' id='sendMessage' placeholder='Enter Text Here'/>" + "<button class='btn btn-primary btn-large' onclick='postChirp()' style='display:inline'> SEND/POST </button>";
-                        // };  setTimeout(holdOn, 5000);
                     } else {
                         alert("server responded but something is wrong");
                     }
@@ -401,28 +327,6 @@ MasterObject.MasterAjaxCall = function (checkFriends, getProfiles, getTweets, ed
                 console.log("This should be the last message");
                 setTimeout(pullTweets, 4000);
 
-
-                //for (var prop in myTweets) {
-                //    while (myTweets.length > 0) {
-                //        console.log("My Tweets Length" + myTweets.length);
-                //        myTweets.pop();
-                //    };
-                //};
-                //for (var prop in friendTweets) {
-                //    while (friendTweets.length > 0) {
-                //        friendTweets.pop();
-                //    };
-                //};
-                //for (var prop in allTweets) {
-                //    while (allTweets.length > 0) {
-                //        allTweets.pop();
-                //    };
-                //};
-
-                //for (var prop in myTweets) {
-                //    allTweets.push(myTweets[prop]);
-                //    console.log(myTweets[prop].username + ": " + myTweets[prop].message + ": " + myTweets[prop].timestamp);
-                //};
             });
 
         } else {
@@ -494,22 +398,6 @@ MasterObject.MasterAjaxCall = function (checkFriends, getProfiles, getTweets, ed
                             document.getElementById("tweetsBox").innerHTML += "<input style='margin-left: 6px; margin-top: 10px; height: 35px;' type='text' id='sendMessage' size='45' placeholder='Enter Text Here'/>" + "  " + "<button class='btn btn-primary btn-large' onclick='postChirp()' style='display:inline'> SEND/POST </button>";
                             var testZoom = document.getElementById('innerTweets');
                             $("#innerTweets").animate({ scrollTop: $("#innerTweets")[0].scrollHeight }, 1000);
-                            //for (var prop in myTweets) {
-                            //    while (myTweets.length > 0) {
-                            //        console.log("My Tweets Length" + myTweets.length);
-                            //        myTweets.pop();
-                            //    };
-                            //};
-                            //for (var prop in friendTweets) {
-                            //    while (friendTweets.length > 0) {
-                            //        friendTweets.pop();
-                            //    };
-                            //};
-                            //for (var prop in allTweets) {
-                            //    while (allTweets.length > 0) {
-                            //        allTweets.pop();
-                            //    };
-                            //};
                             loopSwitch = true;
                             MasterObject.MasterAjaxCall(null, null, true, null, null, null, '/tweets/');
                         }; setTimeout(holdOn, 7000);
